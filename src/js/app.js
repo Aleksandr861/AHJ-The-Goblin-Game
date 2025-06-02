@@ -20,7 +20,7 @@ export function setupGrid() {
     }
 }
 
-let currentIndex = -1; 
+let currentIndex = -1;
 
 export function getRandomItem() {
     const items = document.querySelectorAll('.grid-item');
