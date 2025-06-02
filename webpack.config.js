@@ -38,16 +38,14 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html',
         }),
-        new MiniCSSExtractPlugin({ 
-            filename: '[name].css',
-        }),
+        new MiniCSSExtractPlugin({ filename: '[name].css', }),
     ],
     devServer: { open: true, },
     optimization: {
-    minimize: true, // Enables the minimizer plugins
-    minimizer: [
-      `...`, // Include default JS minimizers
-      new CssMinimizerPlugin(), // Use CSS Minimization
-    ],
-  },
+        minimize: true, // Enables the minimizer plugins
+        minimizer: [
+            '...', // Include default JS minimizers
+            new CssMinimizerPlugin(), // Use CSS Minimization
+        ],
+    },
 };
