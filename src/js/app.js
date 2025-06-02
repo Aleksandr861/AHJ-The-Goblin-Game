@@ -2,14 +2,14 @@
 import '../css/style.css';
 import goblinSrc from '../img/goblin.png';
 
-function initializeGame() {
+export function initializeGame() {
     setupGrid();
     setInterval(placeImage, 1000);
 }
 
 document.addEventListener('DOMContentLoaded', initializeGame);
 
-function setupGrid() {
+export function setupGrid() {
     const container = document.getElementById('game-container');
     const size = 4;
 
@@ -20,12 +20,12 @@ function setupGrid() {
     }
 }
 
-function getRandomItem() {
+export function getRandomItem() {
     const items = document.querySelectorAll('.grid-item');
     return items[Math.floor(Math.random() * items.length)];
 }
 
-function placeImage() {
+export function placeImage() {
     const img = document.createElement('img');
     img.src = goblinSrc;
     img.style.width = '100px';
