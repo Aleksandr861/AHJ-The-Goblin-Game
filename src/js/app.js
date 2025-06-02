@@ -20,19 +20,26 @@ export function setupGrid() {
     }
 }
 
+let currentIndex = -1; 
+
 export function getRandomItem() {
     const items = document.querySelectorAll('.grid-item');
     return items[Math.floor(Math.random() * items.length)];
 }
 
 export function placeImage() {
+    let newIndex;
+    do {
+        newIndex = Math.floor(Math.random() * document.querySelectorAll('.grid-item').length);
+    } while (newIndex === currentIndex);
+
+    currentIndex = newIndex;
+    const randomItem = document.querySelectorAll('.grid-item')[newIndex];
+    randomItem.innerHTML = '';
     const img = document.createElement('img');
     img.src = goblinSrc;
     img.style.width = '100px';
     img.style.height = '100px';
-
-    const randomItem = getRandomItem();
-    randomItem.innerHTML = '';
     randomItem.appendChild(img);
 }
 
